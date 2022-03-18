@@ -1,0 +1,54 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+
+
+<style type="text/css">
+	form{
+		margin-bottom: 30px;
+	}
+
+</style>
+<style type="text/css">
+	.card-body{
+		margin-bottom: 20px;
+		border-width: 5px;
+		border-color: #FF0000;
+		
+
+	}
+
+</style>
+<br>
+
+<div class="row">
+	<div class="col-md-">
+		<div class="card card-body">
+			<form method="POST" action="" class="create_form">
+				{% csrf_token %}
+				{{form}}
+				<input type="submit" name="submit" class="btn">
+				
+			</form>	
+		</div>
+	</div>
+</div>
+
+
+
+<!-- js code for toggle menu -->
+<script >
+	var GetMenuItems =Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight="0px";
+	function MenuToggle(){
+		if(MenuItems.style.maxHeight=="0px"){
+			MenuItems.style.maxHeight="200px"
+
+		}
+	else{
+			MenuItems.style.maxHeight="0px"
+		}
+	}
+
+</script>
+{%endblock%}

@@ -1,0 +1,321 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+<style type="text/css">
+	.price{
+	color: 	#ff523b;
+}
+.quote{
+	text-align: center;
+	color:grey;
+	float: right;
+	font-size: 25px;
+	font-weight: 20px;
+	font-family: "Times New Roman", Times, serif;
+
+}
+.info{
+	background-color:#000000;
+	text-align: center;
+	max-width:100%;
+
+	padding: 10px;
+
+}
+
+.info p{
+	color: #fff;
+	font-family: "Times New Roman", Times, serif;
+}
+
+
+.comment{
+	margin-bottom :60px;
+
+	padding:0;
+	box-sizing:border-box;
+	
+}
+
+.slideshow{
+	width:100%;
+	height:300px;
+	position:relative;
+	overflow: hidden;
+	background: #ff523b;
+}
+
+.slideshow-item{
+	width:inherit;
+	height:inherit;
+	position: absolute;
+	opacity: 0;
+	animation: cycleImages 31s infinite;
+
+}
+.fa.fa-quote-left{
+	font-size: 20px;
+	float: left;
+}
+.fa.fa-quote-right{
+	font-size: 20px;
+	float: right;
+}
+
+.slideshow-item:nth-child(1){
+	animation-delay:0s;
+}
+.slideshow-item:nth-child(2){
+	animation-delay:10s;
+}
+.slideshow-item:nth-child(1){
+	animation-delay:20s;
+}
+
+.slideshow-item-text{
+	max-width:50%;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%);
+	color: #fff;
+
+}
+
+.slideshow-item-text h5{
+	font-size:20px;
+	text-align: center;
+}
+.slideshow-item-text p{
+	font-size:20px;
+	float: right;
+
+}
+
+
+
+@keyframes cycleImages{
+	25%{
+		opacity:1;
+	}
+	40%{
+		opacity:0;
+	}
+}
+</style>
+<div class="info">
+		<p >We take personal orders. If any leave it in the message box in "contact us" page with full description.</p>
+</div>
+
+		<div class="row" >
+			<div class="col-2">
+				<h1>Don't Count Your Shoes <br>Make Your Shoes Count!</h1>
+				<p>You miss 100% of the shots you never take;<br> So fcking <b>SHOOT</b>.</p>
+				<a href="{% url 'products'%}" class="btn">Explore now &#8594;</a>
+			</div>
+			<div class="col-2">
+				<img src="{%static 'images/1234.png'%}">
+			</div>	
+	</div>
+</div>
+
+	</div>
+<!-- Featured categories -->
+
+	<div class="categories">
+		<div class="small-container">
+
+			<div class="row">
+				<div class="col-3">
+					<img src="{%static 'images/jordans.jpg'%}">
+				</div>
+				<div class="col-3">
+					<img src="{%static 'images/category-2.jpg'%}">
+				</div>
+				<div class="col-3">
+					<img src="{%static 'images/category-1.jpg'%}">
+				</div>	
+			</div>	
+		</div>
+		
+	</div>
+
+
+
+<!--  FEATURED PRODUCTS -->
+<div class="small-container">
+	<h2 class="title">Featured Products</h2>
+	<div class="row">
+		<div class="col-4">
+			<a href="{%url 'product_details' 6 %}"><img src="{{product.5.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 6 %}">{{product.5.name}}</a></h4>
+			
+			<p class="price">${{product.5.price}}</p>
+
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 12 %}"><img src="{{product.11.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 12 %}">{{product.11.name}}</a></h4>
+			
+			<p class="price">${{product.11.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 3 %}"><img src="{{product.2.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 3 %}">{{product.2.name}}</a></h4>
+			
+			<p class="price">${{product.2.price}}</p>
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 1 %}"><img src="{{product.0.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 1 %}">{{product.0.name}}</a></h4>
+			
+			<p class="price">${{product.0.price}}</p>
+			
+		</div>
+	</div>
+</div>
+<!-- offer -->
+	<div class="offer">
+		<div class="small-container">
+			<div class ="row">
+				<div class = "col-2">
+					<img src="{%static 'images/Air_1_Retro_High_Og_Obsidian_university_Blue.png'%}" class="offer-img" >
+				</div>
+				<div class = "col-2">
+					<p>Now Available</p>
+					<h1>Air 1 Retro High Og Obsidian university Blue</h1>
+					<small>The Air Jordan 1 High Obsidian/University Blue is a 2019 release of the legendary silhouette in a colorway inspired by Michael Jordans college career at the University of North Carolina. </small>
+					<br>
+					<a href="{% url 'product_details' 16 %}" class="btn">Buy now &#8594; </a>
+				</div>
+			</div>
+		</div>		
+	
+	</div>
+
+<!-- lateest Product -->
+<div class= "small-container">
+	<h2 class="title">Latest Product</h2>
+
+	<div class="row">
+		<div class="col-4">
+			<a href="{%url 'product_details' 2 %}"><img src="{{product.1.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 2 %}">{{product.1.name}}</a></h4>
+			
+			<p class="price">${{product.2.price}}</p>
+
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 5 %}"><img src="{{product.4.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 5 %}">{{product.4.name}}</a></h4>
+			
+			<p class="price">${{product.4.price}}</p>		
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 4 %}"><img src="{{product.3.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 4 %}">{{product.3.name}}</a></h4>
+			
+			<p class="price">${{product.3.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 10 %}"><img src="{{product.9.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 10 %}">{{product.9.name}}</a></h4>
+			
+			<p class="price">${{product.9.price}}</p>
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 9 %}"><img src="{{product.8.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 9 %}">{{product.8.name}}</a></h4>
+			
+			<p class="price">${{product.8.price}}</p>
+
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 11 %}"><img src="{{product.10.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 11 %}">{{product.10.name}}</a></h4>
+			
+			<p class="price">${{product.10.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 8 %}"><img src="{{product.7.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 8 %}">{{product.7.name}}</a></h4>
+
+			<p class="price">${{product.7.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<a href="{%url 'product_details' 7 %}"><img src="{{product.6.product_img1.url}}"></a>
+			<h4><a href="{%url 'product_details' 7 %}">{{product.6.name}}</a></h4>
+			
+			<p class="price">${{product.6.price}}</p>
+
+		
+		</div>
+	</div>
+</div>
+<h2 class="title">FeedBacks </h2>
+	<p class="quote">Because your opinion matters!</p>
+<div class="comment">			
+	<div class="slideshow">
+		{% for c in contact %}
+		
+		<div class="slideshow-item">
+			
+			<div class="slideshow-item-text">
+				<i class="fa fa-quote-left"></i>
+				<br>
+				<h5>{{c.message}}</h5>
+				<i class="fa fa-quote-right"></i>
+				<br>
+				<p id="name">{{c.name}}<p>
+				
+			</div>
+			
+		</div>
+
+		{% endfor %}
+	</div>
+</div>	
+<!-- brands -->
+<div class="braan">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-5">
+				<img src="{%static 'images/nike_logo.jpg'%}">
+			</div>
+			<div class="col-5">
+				<img src="{%static 'images/adidas.jpg'%}">
+			</div>
+			<div class="col-5">
+				<img src="{%static 'images/puma_logo.jpg'%}">
+			</div>
+			<div class="col-5">
+				<img src="{%static 'images/Reebok.jpg'%}">
+			</div>
+			<div class="col-5">
+				<img src="{%static 'images/vans_logo.jpg'%}">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- js code for toggle menu -->
+<script >
+	var GetMenuItems =Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight="0px";
+	function MenuToggle(){
+		if(MenuItems.style.maxHeight=="0px"){
+			MenuItems.style.maxHeight="200px"
+
+		}
+	else{
+			MenuItems.style.maxHeight="0px"
+		}
+	}
+
+</script>
+{%endblock%}
+

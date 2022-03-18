@@ -1,0 +1,50 @@
+{% load static %}
+<style>
+	.hello-msg{
+	font-size: 18px;
+	text-transform: uppercase;
+	}
+
+	.logout{
+		color:#FF0000;
+		font-weight: 700; 
+	}
+
+	.logout img{
+		width:30px;
+	}
+	
+</style>	
+
+</head>
+<div class= "header">
+	<div class="container">
+		<div class="navbar">
+			<div class = "logo">
+				<img src="{% static 'images/logo.png' %}" width="125px">
+			</div>
+			<nav>
+				<ul id="MenuItems">
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li><a href="{% url 'products' %}">Products</a></li>
+					{% if request.user.is_superuser %}
+					<li><a href="{% url 'details' %}">Orders</a></li>
+					{% endif %}	
+					<li><a href="{% url 'about' %}">About</a></li>
+					<li><a href="{% url 'contact' %}">Contact Us</a></li>
+					{% if request.user.is_anonymous %}
+						<li><a href="{% url 'login' %}">Account</a></li>
+					{% else %}
+						<li><span class="hello-msg"> {{request.user}} </span></li>
+						<li><span  class="hello-msg"><a class="logout" href="{% url 'logout' %}"><img src="{% static 'images/logout.png' %}"></a></span></li>
+					{% endif %}
+				</ul>
+
+			</nav>
+			
+			<a href="{%url 'cart'%}"><img src="{% static 'images/cart_pic.png' %}" width="40px" ></a>
+			<img src="{% static 'images/menu.png' %}" class="menu_icon" onclick="MenuToggle()" >	
+		</div>
+	</div>
+
+

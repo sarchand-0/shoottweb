@@ -1,0 +1,47 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+<style type="text/css">
+	.table{
+		border: 3px solid #ff523b;
+		padding:20px;
+		margin:30px;
+
+	}
+
+	.line{
+		width: 100%;
+	}
+</style>
+
+<div class="title">
+	<h2>Messages</h2>
+</div>
+<div class=table>
+	<table>
+			<tr>
+				<th>name</th>
+				<th>email</th>
+				<th>message</th>
+			</tr>
+			{% for message in messages %}
+				<tr>
+
+						
+					<td>{{message.name}}</td>		
+					<td>{{message.email}}</td>
+					<td>${{message.message}}</td>
+
+				</tr>
+			<div class="line">
+				<tr>
+					<td><hr  color="red"></td>
+					<td><hr  color="red"></td>
+					<td><hr  color="red"></td>
+				</tr>
+			</div>
+			{% endfor %} 
+	</table>
+</div>
+
+{%endblock%}

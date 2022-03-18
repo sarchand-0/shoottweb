@@ -1,0 +1,124 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+
+
+<style type="text/css">
+	.message{
+		text-align: left;
+		border: 3px solid #ff523b;
+		border-radius: 20px
+
+			}
+	.input{
+		
+		margin:20px;
+		
+
+
+	}
+	
+.block{ 
+	color:	#000000;
+	font-size: 18px;
+}
+
+.social{
+	margin-bottom:50px; 
+}
+.media{
+	margin-left: 30px;
+	margin-bottom: 40px;
+}
+.media img{
+
+	width:40px;
+	filter:grayscale(100%);
+	border-radius: 20px;
+}
+.media img:hover{
+
+	
+	filter:grayscale(0);
+}
+
+
+
+</style>
+<div class ="title">
+	<h2>Contact Us</h2>
+</div>
+<div class="social">
+	<div class=row>
+		<div class="col-2">
+			<div class="media">
+				<img src="{% static 'images/facebook.png'%}"><b>shoot</b> 
+			</div>
+
+			<div class="media">
+				<img src="{% static 'images/instagram.png'%}"> <b>__shoot</b>
+			</div>
+		</div>
+		<div class="col-2">
+			<div class="media">
+				<img src="{% static 'images/snapchat.png'%}">  <b>shootshoes</b>
+			</div>
+			<div class="media">
+				<img src="{% static 'images/mail.png'%}">  <b>shootweb9@gmail.com</b>
+			</div>
+		</div>
+	</div>
+	<div class="media">
+		
+	</div>
+</div>
+
+
+
+<div class="block">
+	<div class=row>
+		<div class="col-2">
+			<form method="POST" action="">
+				{% csrf_token %}
+
+				<div class="message ">
+					<div class="input">
+					 	<b>{{"Name : "}} </b>{{form.name}}
+					</div>
+					<div class="input">
+						<b>{{"Email : "}} </b>{{form.email}}
+					</div>
+					<div class="input">	
+						<b>Message :</b> <br> {{form.message}}
+					</div>
+					
+					
+				</div>
+				<div>
+					<input class="btn " type="submit" value="Submit">
+				</div>
+			</form>
+		</div>
+		<div class="col-2">
+			<img src="{%static 'images/1234.png'%}">
+		</div>
+	</div>
+</div>
+
+<!-- js code for toggle menu -->
+<script >
+	var GetMenuItems =Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight="0px";
+	function MenuToggle(){
+		if(MenuItems.style.maxHeight=="0px"){
+			MenuItems.style.maxHeight="200px"
+
+		}
+	else{
+			MenuItems.style.maxHeight="0px"
+		}
+	}
+
+
+</script>
+{%endblock%}

@@ -1,0 +1,92 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+.full{
+	padding-top: 40px;
+	padding-bottom: 300px;
+	padding-left: 400px;
+	padding-right: 400px;
+}
+
+.fa.fa-quote-right {
+	font-size: 34px;
+	float: right;
+	color:#ff523b;
+
+}
+
+.fa.fa-quote-left{
+	font-size: 34px;
+	color:#ff523b;
+}
+.words p{
+	text-align: center;
+	color :#000000;
+	font-size: 30px;
+	font-family: "Times New Roman", Times, serif;
+}
+.
+.title{
+	text-align : center;
+	color:#ff523b ;
+}
+
+.col1{
+	flex-basis: 100%;
+	min-width: 30px;
+}
+
+.col1 img{
+	width:10%;
+}
+
+
+</style>
+		
+<dir class="full">
+	<div class="title">
+		<h1>About Us</h1>
+	</div>
+
+
+
+		<div class="words">
+			<i class="fa fa-quote-left"></i>
+			<p>All the products in this website are 100% authentic.They are imported from The United States Of America or ordered from StockX or GOAT well renouned companies.We will deliver the product within 15 days of order(if out of stock might take longer).We even take personal orders we take10% advance in such orders.
+				<br>
+				<br>
+			We currently don't have a physical office.so we either take payment with Esewa or cash.
+			we only deliver only in Nepal.
+			</p>
+			<div class="this">
+				<i class="fa fa-quote-right "></i>
+			</div>
+			
+		</div>
+	
+
+</div>
+
+
+
+
+<!-- js code for toggle menu -->
+<script >
+	var GetMenuItems =Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight="0px";
+	function MenuToggle(){
+		if(MenuItems.style.maxHeight=="0px"){
+			MenuItems.style.maxHeight="200px"
+
+		}
+	else{
+			MenuItems.style.maxHeight="0px"
+		}
+	}
+
+</script>
+
+
+{%endblock%}

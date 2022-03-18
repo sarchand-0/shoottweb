@@ -1,0 +1,140 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+<style type="text/css">
+	.info{
+	background-color:#000000;
+	text-align: center;
+	max-width:100%;
+
+	padding: 10px;
+
+}
+	.info p{
+	color: #fff;
+	font-family: "Times New Roman", Times, serif;
+	}
+</style>
+	<!-- single product Detail -->
+{% if request.user.is_anonymous %}
+<div class="info">
+		<p >Please <b>Login In</b>  from the Account page if you want to add any item to the cart.</p>
+</div>
+
+{% endif %}
+
+	<div class="small-container single-product">
+		<div class="row">
+			<div class="col-2">
+				<img src="{{img1.url}}" width="100%" id="ProductImg" >
+				<div class="small-img-row">
+					<div class="small-img-col">
+						<img src="{{img1.url}}" class="small-img">
+					</div>
+					
+					<div class="small-img-col">
+						<img src="{{img2.url}}" class="small-img">
+					</div>
+					
+					<div class="small-img-col">
+						<img src="{{img3.url}}" class="small-img">
+					</div>
+					<div class="small-img-col">
+						<img src="{{img4.url}}" class="small-img">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-2">
+				<h1>{{name}}</h1>
+				<h3>${{price}}</h3>
+				<p>per pair</p>
+				<select id='size'>
+					<option value='Us 7'>Us 7</option>
+					<option value='Us 7.5'>Us 7.5</option>
+					<option value='Us 8'>Us 8</option>
+					<option value='Us 8.5'>Us 8.5</option>
+					<option value='Us 9'>Us 9</option>
+					<option value='Us 9'>Us 9.5</option>
+					<option value='Us 10'>Us 10 </option>
+					<option value='Us 10.5'>Us 10.5</option>
+				</select>
+				<input type="number" min="0" max='15' id="quant" >
+				<button  data-product= "{{current_product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart" >Add to cart</button>
+				<h3>Product Details <i class="fa fa-indent" ></i></h3>
+				<br>  
+				<p>{{description}} </p>
+			</div>
+
+
+
+		</div>
+	</div>
+<div class ="title">
+	<h2>You Might Also Like</h2>
+</div>
+<br>
+<br>
+<div class="small-container">
+	<div class="row">
+		{% for item in items%}
+	 		{% if item.company == company  and item != current_product %}
+	 			
+				<div class="col-4">
+					<a href="{%url 'product_details' item.id %}"><img src="{{item.product_img1.url}}" ></a>
+					<h4><a href="{%url 'product_details' item.id %}">{{item.name}}</a></h4>
+					
+					<p class="price">${{item.price}}</p>
+
+				</div>
+				
+			{% endif %}
+		{% endfor %}
+
+	</div>
+
+</div>
+
+<!-- title -->
+
+
+<!-- js code for toggle menu -->
+<script >
+	var GetMenuItems =document.getElementById("MenuItems");
+	MenuItems.style.maxHeight="0px";
+	function MenuToggle(){
+		if(MenuItems.style.maxHeight=="0px"){
+			MenuItems.style.maxHeight="200px"
+
+		}
+	else{
+			MenuItems.style.maxHeight="0px"
+		}
+	}
+
+</script>
+<!-- js for product gallery -->
+	<script >
+		var ProductImg =document.getElementById("ProductImg");
+		var SmallImg= document.getElementsByClassName("small-img");
+
+		SmallImg[0].onclick= function()
+		{
+			ProductImg.src= SmallImg[0].src;
+		}
+		SmallImg[1].onclick= function()
+		{
+			ProductImg.src= SmallImg[1].src;
+		}
+		SmallImg[2].onclick= function()
+		{
+			ProductImg.src = SmallImg[2].src;
+		}
+		SmallImg[3].onclick= function()
+		{
+			ProductImg.src =SmallImg[3].src;
+		}
+
+	</script>
+
+{%endblock%}

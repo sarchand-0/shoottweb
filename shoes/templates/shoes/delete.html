@@ -1,0 +1,33 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<style type="text/css">
+	.card-body{
+		margin-bottom: 20px;
+		border-width: 5px;
+		border-color: #FF0000;
+		
+
+	}
+
+</style>
+<br>
+<div class="row">
+	<div class="col-md-">
+		<div class="card card-body">
+			<p>Are you sure you want to delete "{{item}}" order</p>
+
+			<form method="POST" action="{% url 'delete_order' item.id %}">
+				{% csrf_token %}
+				<a class="btn btn-warning" href="{% url 'details'%}">Cancel</a>
+				<input class="btn btn-danger" type="submit" name="Comfirm">
+			</form>
+		</div>
+	</div>
+</div>
+
+{%endblock%}

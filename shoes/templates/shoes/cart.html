@@ -1,0 +1,104 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+<style >
+.btn_1{
+	width: 100px;
+	height:40px;
+}
+.warning{
+	max-width: 100%;
+	background-color: #FF0000;
+	text-align: center;
+
+}
+
+.warning p{
+	color: #fff;
+
+}
+</style>
+
+	<!-- cart details -->
+<div class="small-container cart-page">
+	<table>
+		<tr>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Subtotal</th>
+		</tr>
+		{% for item in items %}
+			<tr>
+				<td>
+					<div class="cart-info">
+						<img src="{{item.product.imageURL}}">
+						<div>
+							<p>{{item}}</p>
+							<small>{{item.product.price}}</small>
+							<br>
+							<a href="{% url 'remove_item' item.id %}" >Remove</a>
+						</div>
+					</div>
+				</td>
+				
+				<td>{{item.quantity}}</td>
+				<td>${{item.get_total}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+	<div class="total-price">
+		<table>
+			<tr>
+				<td>Subtotal</td>
+				<td>${{order.get_cart_total}}</td>
+			</tr>
+			<tr>
+				<td>Tax(13%)</td>
+				<td>{{order.get_cart_Tax}}</td>
+			</tr>
+			<tr>
+				<td>Total</td>
+				<td>${{order.get_cart_total_with_Tax}}</td>
+			</tr>
+			<tr>
+				<td>
+					<form method='POST' action="{%url 'cart' %}">
+						{% csrf_token %}
+						<input class="btn btn_1" type="submit" name="Comfirm">
+					</form>
+				</td>
+			</tr>
+	
+		</table>
+	</div>
+	
+</div>
+<div class="warning">
+		<p>After you press submit the order will directly be placed.</p>
+</div>
+
+
+	
+
+
+
+<!-- js code for toggle menu -->
+<script >
+	var GetMenuItems =document.getElementById("MenuItems");
+	MenuItems.style.maxHeight="0px";
+	function MenuToggle(){
+		if(MenuItems.style.maxHeight=="0px"){
+			MenuItems.style.maxHeight="200px"
+
+		}
+	else{
+			MenuItems.style.maxHeight="0px"
+		}
+	}
+
+</script>
+
+
+
+{%endblock%}

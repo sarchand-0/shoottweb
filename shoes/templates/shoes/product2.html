@@ -1,0 +1,212 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+
+</div>
+<!-- page -->
+<div class="small-container">
+	<div class="row row-2">
+
+		<h2>All Products</h2>
+		<div>
+			<form method="get">
+				{{myFilter.form}}
+				<button class="btn" type="submit">Search</button>
+				
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-4">
+			<img src="{{product.5.product_img1.url}}" >
+			<h4><a href="{%url 'product_details' 6 %}">{{product.5.name}}</a></h4>
+			<!-- admin starts with 0 -->
+			<!-- product start with 1 -->
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.5.price}}</p>
+
+		</div>
+		<div class="col-4">
+			<img src="{{product.11.product_img1.url}}" >
+			<h4><a href="{%url 'product_details' 12 %}">{{product.11.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-o" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.11.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<img src="{{product.2.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 3 %}">{{product.2.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-half-o" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.2.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<img src="{{product.0.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 1 %}">{{product.0.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.0.price}}</p>
+			
+		</div>
+
+		<div class="col-4">
+			<img src="{{product.1.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 2 %}">{{product.1.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-half-o" ></i>
+			</div>
+			<p class="price">${{product.2.price}}</p>
+
+		</div>
+		<div class="col-4">
+			<img src="{{product.4.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 5 %}">{{product.4.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-o" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.4.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<img src="{{product.3.product_img1.url}}"	>
+			<h4><a href="{%url 'product_details' 4 %}">{{product.3.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-half-o" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.3.price}}</p>
+			<!-- done till here -->
+		</div>
+		<div class="col-4">
+			<img src="{{product.9.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 10 %}">{{product.9.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.9.price}}</p>
+
+		</div>
+		<div class="col-4">
+			<img src="{{product.8.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 9 %}">{{product.8.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-half-o" ></i>
+			</div>
+			<p class="price">${{product.8.price}}</p>
+
+		</div>
+		<div class="col-4">
+			<img src="{{product.10.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 11 %}">{{product.10.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-o" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.10.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<img src="{{product.7.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 8 %}">{{product.7.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-half-o" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.7.price}}</p>
+			
+		</div>
+		<div class="col-4">
+			<img src="{{product.6.product_img1.url}}">
+			<h4><a href="{%url 'product_details' 7 %}">{{product.6.name}}</a></h4>
+			<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div>
+			<p class="price">${{product.6.price}}</p>
+
+		
+		</div>
+	</div>
+
+
+	<div class="page-btn">
+		<span>1</span>
+		<span >2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>&#8594;</span>
+	</div>
+
+</div>
+
+<!-- js code for toggle menu -->
+<script >
+	var GetMenuItems =Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight="0px";
+	function MenuToggle(){
+		if(MenuItems.style.maxHeight=="0px"){
+			MenuItems.style.maxHeight="200px"
+
+		}
+	else{
+			MenuItems.style.maxHeight="0px"
+		}
+	}
+
+
+</script>
+
+
+{%endblock%}

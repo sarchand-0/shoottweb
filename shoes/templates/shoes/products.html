@@ -1,0 +1,78 @@
+{% extends 'shoes/main.html'%}
+{% load static %}
+{% block content %}
+
+
+</div>
+<style type="text/css">
+	.price{
+	color: 	#ff523b;
+}
+</style>
+<!-- page -->
+<div class="small-container">
+	<div class="row row-2">
+		<div class="title">
+			<h2>All Products</h2>
+		</div>
+		
+		<div>
+			<form class="search-box" method="get">
+				{{myFilter.form.name}}
+				<button class="btn" type="submit">Search</button>
+				
+			</form>
+		</div>
+	</div>
+	<select id='size'>
+		<option value=''>Default</option>
+		<option value='Us 7.5'>price[low-high]</option>
+		<option value='Us 8'>price[high-low]</option>
+		
+	</select>
+
+
+	<div class="row">
+		{% for item in product %}
+
+		<div class="col-4">
+			<a href="{%url 'product_details' item.id %}"><img src="{{item.product_img1.url}}" ></a>
+			<h4><a href="{%url 'product_details' item.id %}">{{item.name}}</a></h4>
+			<!-- admin starts with 0 -->
+			<!-- product start with 1 -->
+		<!-- 	<div class="rating">
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star" ></i>
+				<i class="fa fa-star-o" ></i>
+			</div> -->
+			<p class="price">${{item.price}}</p>
+
+		</div>
+		{% endfor %}
+	</div>
+
+
+
+</div>
+
+<!-- js code for toggle menu -->
+<script >
+	var GetMenuItems =Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight="0px";
+	function MenuToggle(){
+		if(MenuItems.style.maxHeight=="0px"){
+			MenuItems.style.maxHeight="200px"
+
+		}
+	else{
+			MenuItems.style.maxHeight="0px"
+		}
+	}
+
+
+</script>
+
+
+{%endblock%}
